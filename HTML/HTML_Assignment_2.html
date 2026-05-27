@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <legend><h1>Fill out this Form for Classes</h1></legend>
+        <fieldset style="width: fit-content;">
+
+            <label for="name">Full Name:</label>
+            <input type="text" name="name" id="name" required >
+            <br>
+            <label for="roll_number">Roll Number:</label>
+            <input type="text" name="roll_number" id="roll_number" required>
+            <br>
+            <label for="DOB">Date of Birth:</label>
+            <input type="date" name="DOB" id="DOB" required>
+            <br>
+            <label for="gender">Gender:</label>
+            <input type="radio" name="gender" value="Male">Male
+            <input type="radio" name="gender" value="Female">Female
+            <br>
+            <label for="email_address">Email Address:</label>
+            <input type="email" name="email_address" id="email_address" required>
+            <br>
+            <label for="phone">Phone Number:</label>
+            <input type="number" name="phone" id="phone">
+            <br>
+            <label for="address">Address:</label>
+            <textarea name="address" id="address" placeholder="Type Address Here...."></textarea>
+            <br>
+        </fieldset>
+        <fieldset style="width:max-content;">
+
+            <label for="courses">Course Enrolled:</label>
+            <select name="courses" id="courses" required>
+                <option value="Math">Math</option>
+                <option value="English">English</option>
+                <option value="History">History</option>
+            </select>
+            <br>
+            <label for="hobbies">Hobbies/Interests:</label>
+            <input type="checkbox" name="hobbies" value="Sports">Sports
+            <input type="checkbox" name="hobbies" value="Video_Games">Video Games
+            <input type="checkbox" name="hobbies" value="Reading">Reading
+        </fieldset>
+            <br>
+            <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

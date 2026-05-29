@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        
+        function calculateTax()
+        {
+            let income = document.getElementById('totalIncome').value;
+            if (income > 0 && income <= 9275) 
+            {
+                let tax = income * .1
+                income = Number(tax)
+            } 
+            else if(income > 9275 && income <= 37650 )
+            {
+                let excess = income - 9275
+                let incomePer = excess * .15
+                income = 927.50 + incomePer
+            }
+            else if(income > 37650 && income <= 91150)
+            {
+                let excess = income - 37650
+                let incomePer = excess * .25
+                income = 5183.75 + incomePer
+            }
+            else if(income > 91150 && income <= 190150 )
+            {
+                let excess = income - 91150
+                let incomePer = excess * .28
+                income = 18558.75 + incomePer
+            }
+            else if(income > 190150 && income <= 413350 )
+            {
+                let excess = income - 190150
+                let incomePer = excess * .33
+                income = 46278 + incomePer
+            }
+            else if(income > 413350 && income <= 415050 )
+            {
+                let excess = income - 413350
+                let incomePer = excess * .33
+                income = 119934 + incomePer
+            } else
+            {
+                let excess = income - 415050
+                let incomePer = excess * .396
+                income = 120529.75 + incomePer
+            }
+            console.log(income)
+            document.getElementById('owedIncome1').innerText = income;
+        }
+    </script>
+</head>
+<body>
+    <div style="display: flex; justify-content: center; gap: 15px; width: 100%;">
+        <label for="income">Enter taxable income:</label>
+        <input type="number" name="income" id="totalIncome">
+        <button onclick="calculateTax()">Calculate</button>
+    </div>
+    <div style="display: flex; justify-content: center; gap: 15px; width: 100%; margin: 15px 0px;">
+        <label for="owedIncome">Income tax owed:</label>
+        <span id="owedIncome1" style="border: 1px solid black; width: 179px; margin-right: 55px;"></span>
+        
+    </div>
+    <div style="display: flex;  justify-content: center;">
+        <div style="border: 1px solid black; width: 11%;">
+            <b>Taxable income</b>
+        </div>
+        <div style="border: 1px solid black; width: 15%;">
+            <b>Income tax</b>
+        </div>
+    </div>
+    <div style="display: flex;  justify-content: center;">
+        <div style="border: 1px solid black; width: 5%;">
+            <b>Over...</b>
+        </div>
+        <div style="border: 1px solid black; width: 6%;">
+            <b>But not over...</b>
+        </div>
+        <div style="border: 1px solid black; width: 15%; text-align: end;">
+            <b>Of excess over...</b>
+        </div>
+    </div>
+    <div style="display: flex; text-align: end; justify-content: center;">
+        <div style="border: 1px solid black; width: 5%;">
+            <span>$0</span>
+        </div>
+        <div style="border: 1px solid black; width: 6%; ">
+            <span>$9,275</span>
+        </div>
+        <div style="border: 1px solid black; width: 10%;">
+            <span>$0 plus 10%</span>
+        </div>
+        <div style="border: 1px solid black; width: 5%;">
+            <span>$0</span>
+        </div>
+    </div>
+    <div style="display: flex; text-align: end; justify-content: center;">
+        <div style="border: 1px solid black; width: 5%;">
+            <span>$9,275</span>
+        </div>
+        <div style="border: 1px solid black; width: 6%; ">
+            <span>$37,650</span>
+        </div>
+        <div style="border: 1px solid black; width: 10%;">
+            <span>927.50 plus 15%</span>
+        </div>
+        <div style="border: 1px solid black; width: 5%;">
+            <span>$9,275</span>
+        </div>
+    </div>
+    <div style="display: flex; text-align: end; justify-content: center;">
+        <div style="border: 1px solid black; width: 5%;">
+            <span>$37,650</span>
+        </div>
+        <div style="border: 1px solid black; width: 6%; ">
+            <span>$91,150</span>
+        </div>
+        <div style="border: 1px solid black; width: 10%;">
+            <span>5,183.75 plus 25%</span>
+        </div>
+        <div style="border: 1px solid black; width: 5%;">
+            <span>$37,650</span>
+        </div>
+    </div>
+    <div style="display: flex; text-align: end; justify-content: center;">
+        <div style="border: 1px solid black; width: 5%;">
+            <span>$91,150</span>
+        </div>
+        <div style="border: 1px solid black; width: 6%; ">
+            <span>$190,150</span>
+        </div>
+        <div style="border: 1px solid black; width: 10%;">
+            <span>18,558.75 plus 28%</span>
+        </div>
+        <div style="border: 1px solid black; width: 5%;">
+            <span>$91,150</span>
+        </div>
+    </div>
+    <div style="display: flex; text-align: end; justify-content: center;">
+        <div style="border: 1px solid black; width: 5%;">
+            <span>$190,150</span>
+        </div>
+        <div style="border: 1px solid black; width: 6%; ">
+            <span>$413,350</span>
+        </div>
+        <div style="border: 1px solid black; width: 10%;">
+            <span>46,278.75 plus 33%</span>
+        </div>
+        <div style="border: 1px solid black; width: 5%;">
+            <span>$190,150</span>
+        </div>
+    </div>
+    <div style="display: flex; text-align: end; justify-content: center;">
+        <div style="border: 1px solid black; width: 5%;">
+            <span>$413,350</span>
+        </div>
+        <div style="border: 1px solid black; width: 6%; ">
+            <span>$415,050</span>
+        </div>
+        <div style="border: 1px solid black; width: 10%;">
+            <span>119,934.75 plus 33%</span>
+        </div>
+        <div style="border: 1px solid black; width: 5%;">
+            <span>$413,350</span>
+        </div>
+    </div>
+    <div style="display: flex; text-align: end; justify-content: center;">
+        <div style="border: 1px solid black; width: 5%;">
+            <span>$415,050</span>
+        </div>
+        <div style="border: 1px solid black; width: 6%; ">
+            <span></span>
+        </div>
+        <div style="border: 1px solid black; width: 10%;">
+            <span>120,529.75 plus 39.6%</span>
+        </div>
+        <div style="border: 1px solid black; width: 5%;">
+            <span>$415,050</span>
+        </div>
+    </div>
+</body>
+</html>
